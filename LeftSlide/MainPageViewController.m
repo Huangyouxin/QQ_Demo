@@ -11,7 +11,7 @@
 #import "OtherPlayView.h"
 #import "MessingView.h"
 #import "FriendlistView.h"
-#define vBackBarButtonItemName  @"backArrow.png"    //导航条返回默认图片名
+
 @interface MainPageViewController (){
     UITabBarController * tabbarView;
 }
@@ -22,7 +22,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    self.title = @"好友列表";
     self.view.backgroundColor = [UIColor whiteColor];
 
     UIButton *menuBtn = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -87,7 +87,9 @@
 }
 
 - (void) addtabbarlist{
+    
     tabbarView = [[UITabBarController alloc]init];
+    tabbarView.delegate = self;
     OtherPlayView * tabbar2 = [[OtherPlayView alloc]init];
     FriendlistView * tabbar1 = [[FriendlistView alloc]init];
     MessingView * tabbar3 = [[MessingView alloc]init];
@@ -108,5 +110,35 @@
     [self.view addSubview:tabbarView.view];
 }
 
+
+#pragma mark UITabbarControllerDelegate
+
+- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController{
+    
+    NSLog(@"第二步");
+
+    //点击tabbar改变导航栏标题
+    NSLog(@"选择tabbar的Tag值：%d", viewController.tabBarItem.tag);
+    
+    int Select_tag = viewController.tabBarItem.tag;
+    switch (Select_tag) {
+        case 1001:
+            self.title = @"好友列表";
+            break;
+        case 1002:
+            self.title = @"娱乐列表";
+            break;
+        case 1003:
+            self.title = @"更多列表";
+            break;
+        default:
+            break;
+    }
+}
+
+- (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController{
+    NSLog(@"第一步");
+    return YES;
+}
 
 @end

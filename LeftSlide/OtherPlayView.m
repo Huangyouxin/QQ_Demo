@@ -12,7 +12,7 @@
 
 - (void) viewDidLoad{
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor blueColor];
+//    self.view.backgroundColor = [UIColor blueColor];
     self.navigationItem.title = @"娱乐列表";
 }
 @end

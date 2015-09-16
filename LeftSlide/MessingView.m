@@ -14,7 +14,7 @@
 
 - (void) viewDidLoad{
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor blueColor];
+//    self.view.backgroundColor = [UIColor blueColor];
     self.navigationItem.title = @"信息列表";
 }
 @end
