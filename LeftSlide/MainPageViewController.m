@@ -108,18 +108,5 @@
     [self.view addSubview:tabbarView.view];
 }
 
--(void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
-    NSInteger index = tabBarController.selectedIndex;
-    NSString *title;
-    switch (index) {
-        case 0:
-            title = @"Message";
-            break;
-        case 1:
-            title = @"User List";
-            break;
-    }
-    self.title = title;
-}
 
 @end

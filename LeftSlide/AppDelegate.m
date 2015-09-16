@@ -29,10 +29,6 @@
     self.mainNavigationController = [[UINavigationController alloc] initWithRootViewController:mainVC];
     LeftSortsViewController *leftVC = [[LeftSortsViewController alloc] init];
     self.LeftSlideVC = [[LeftSlideViewController alloc] initWithLeftView:leftVC andMainView:self.mainNavigationController];
-    
-//    self.mainTabBarController = [[UITabBarController alloc]initWithNibName:@" MainPageViewController" bundle:nil];
-//    LeftSortsViewController *leftVC = [[LeftSortsViewController alloc] init];
-//    self.LeftSlideVC = [[LeftSlideViewController alloc] initWithLeftView:leftVC andMainView:self.mainTabBarController];
     self.window.rootViewController = self.LeftSlideVC;
 
     [[UINavigationBar appearance] setBarTintColor:[UIColor purpleColor]];
