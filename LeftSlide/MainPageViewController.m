@@ -13,6 +13,7 @@
 #import "FriendlistView.h"
 
 @interface MainPageViewController (){
+    
     UITabBarController * tabbarView;
 }
 
@@ -21,10 +22,18 @@
 @implementation MainPageViewController
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
+    
+    //导航栏设置
     self.title = @"好友列表";
+    NSDictionary * dict = [NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor],NSForegroundColorAttributeName,[UIFont systemFontOfSize:17],NSFontAttributeName, nil];
+    self.navigationController.navigationBar.titleTextAttributes = dict;
+    
+    //主视图背景颜色
     self.view.backgroundColor = [UIColor whiteColor];
 
+    //添加左侧
     UIButton *menuBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     menuBtn.frame = CGRectMake(0, 0, 20, 18);
     [menuBtn setBackgroundImage:[UIImage imageNamed:@"menu"] forState:UIControlStateNormal];
@@ -38,6 +47,7 @@
     [rightBtn addTarget:self action:@selector(openOrCloseRightList) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:rightBtn];
     
+    //标签栏按钮
     [self addtabbarlist];
 }
 

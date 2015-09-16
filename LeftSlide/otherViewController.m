@@ -16,8 +16,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor redColor];
-    self.title = @"pppppp";
+    self.view.backgroundColor = [UIColor whiteColor];
+    self.title = @"三折叠列表demo";
 }
 
 - (void)didReceiveMemoryWarning {

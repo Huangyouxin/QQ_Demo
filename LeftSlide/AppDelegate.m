@@ -32,7 +32,7 @@
     self.window.rootViewController = self.LeftSlideVC;
 
     //导航栏颜色
-//    [[UINavigationBar appearance] setBarTintColor:[UIColor purpleColor]];
+    [[UINavigationBar appearance] setBarTintColor:[UIColor blackColor]];
     return YES;
 }
 
