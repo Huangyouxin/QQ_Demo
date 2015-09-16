@@ -10,4 +10,7 @@
 
 @interface MainPageViewController : UIViewController <UITabBarControllerDelegate>
 
+- (void) openOrCloseRightList;
+- (void) openOrCloseLeftList;
+
 @end

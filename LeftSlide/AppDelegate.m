@@ -9,6 +9,9 @@
 #import "AppDelegate.h"
 #import "MainPageViewController.h"
 #import "LeftSortsViewController.h"
+#import "OtherPlayView.h"
+#import "FriendlistView.h"
+#import "MessingView.h"
 
 @interface AppDelegate ()
 
@@ -23,19 +26,39 @@
     self.window.backgroundColor = [UIColor whiteColor];   //设置通用背景颜色
     [self.window makeKeyAndVisible];
     
-    MainPageViewController *mainVC = [[MainPageViewController alloc] init];
+    self.mainController = [[MainPageViewController alloc] init];
     
 //   UINavigationController为最底层
-    self.mainNavigationController = [[UINavigationController alloc] initWithRootViewController:mainVC];
-    LeftSortsViewController *leftVC = [[LeftSortsViewController alloc] init];
-    self.LeftSlideVC = [[LeftSlideViewController alloc] initWithLeftView:leftVC andMainView:self.mainNavigationController];
-    
-//    self.mainTabBarController = [[UITabBarController alloc]initWithNibName:@" MainPageViewController" bundle:nil];
+//    self.mainNavigationController = [[UINavigationController alloc] initWithRootViewController:mainVC];
 //    LeftSortsViewController *leftVC = [[LeftSortsViewController alloc] init];
-//    self.LeftSlideVC = [[LeftSlideViewController alloc] initWithLeftView:leftVC andMainView:self.mainTabBarController];
+//    self.LeftSlideVC = [[LeftSlideViewController alloc] initWithLeftView:leftVC andMainView:self.mainNavigationController];
+    
+    UITabBarController * tabbarconTro = [[UITabBarController alloc]init];
+    self.mainTabBarController = tabbarconTro;
+    
+    OtherPlayView * tabbar2 = [[OtherPlayView alloc]init];
+    FriendlistView * tabbar1 = [[FriendlistView alloc]init];
+    MessingView * tabbar3 = [[MessingView alloc]init];
+    
+    UINavigationController * nav1 = [[UINavigationController alloc]initWithRootViewController:tabbar1];
+    UINavigationController * nav2 = [[UINavigationController alloc]initWithRootViewController:tabbar2];
+    UINavigationController * nav3 = [[UINavigationController alloc]initWithRootViewController:tabbar3];
+    
+    UITabBarItem * item1 = [[UITabBarItem alloc]initWithTitle:@"好友列表" image:[UIImage imageNamed:@"info"] tag:1001];
+    UITabBarItem * item2 = [[UITabBarItem alloc]initWithTitle:@"娱乐列表" image:[UIImage imageNamed:@"info"] tag:1002];
+    UITabBarItem * item3 = [[UITabBarItem alloc]initWithTitle:@"更多功能" image:[UIImage imageNamed:@"info"] tag:1003];
+    
+    tabbar1.tabBarItem = item1;
+    tabbar2.tabBarItem = item2;
+    tabbar3.tabBarItem = item3;
+    self.mainTabBarController.viewControllers  = @[nav1, nav2,nav3];
+    
+    LeftSortsViewController *leftVC = [[LeftSortsViewController alloc] init];
+    self.LeftSlideVC = [[LeftSlideViewController alloc] initWithLeftView:leftVC andMainView:self.mainTabBarController];
     self.window.rootViewController = self.LeftSlideVC;
 
-    [[UINavigationBar appearance] setBarTintColor:[UIColor purpleColor]];
+//    [[UINavigationBar appearance] setBarTintColor:[UIColor purpleColor]];
+    
     return YES;
 }
 
