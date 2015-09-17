@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC7115F61BAA56BF007022D2 /* RightSlideCustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7115F51BAA56BF007022D2 /* RightSlideCustomView.m */; };
 		BC8563DE1BA659DD00E55884 /* UIButton_extra.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8563DD1BA659DD00E55884 /* UIButton_extra.m */; };
 		BC8563E51BA67C0B00E55884 /* setting@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC8563E41BA67C0B00E55884 /* setting@2x.png */; };
 		BC8563E91BA6B21B00E55884 /* FriendlistView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8563E81BA6B21B00E55884 /* FriendlistView.m */; };
@@ -21,7 +22,7 @@
 		EEA180B71B32907700A3186D /* UIView_extra.m in Sources */ = {isa = PBXBuildFile; fileRef = EEA180B51B32907700A3186D /* UIView_extra.m */; };
 		EEA180BA1B3292A900A3186D /* MainPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEA180B91B3292A900A3186D /* MainPageViewController.m */; };
 		EEA180BD1B3292CB00A3186D /* LeftSortsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEA180BC1B3292CB00A3186D /* LeftSortsViewController.m */; };
-		EEA180C01B32930100A3186D /* otherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEA180BF1B32930100A3186D /* otherViewController.m */; };
+		EEA180C01B32930100A3186D /* OtherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEA180BF1B32930100A3186D /* OtherViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BC7115F41BAA56BF007022D2 /* RightSlideCustomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RightSlideCustomView.h; sourceTree = "<group>"; };
+		BC7115F51BAA56BF007022D2 /* RightSlideCustomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RightSlideCustomView.m; sourceTree = "<group>"; };
 		BC8563DC1BA659DD00E55884 /* UIButton_extra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIButton_extra.h; sourceTree = "<group>"; };
 		BC8563DD1BA659DD00E55884 /* UIButton_extra.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIButton_extra.m; sourceTree = "<group>"; };
 		BC8563E41BA67C0B00E55884 /* setting@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "setting@2x.png"; path = "../../../.Trash/setting@2x.png"; sourceTree = "<group>"; };
@@ -62,8 +65,8 @@
 		EEA180B91B3292A900A3186D /* MainPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainPageViewController.m; sourceTree = "<group>"; };
 		EEA180BB1B3292CB00A3186D /* LeftSortsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftSortsViewController.h; sourceTree = "<group>"; };
 		EEA180BC1B3292CB00A3186D /* LeftSortsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftSortsViewController.m; sourceTree = "<group>"; };
-		EEA180BE1B32930100A3186D /* otherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = otherViewController.h; sourceTree = "<group>"; };
-		EEA180BF1B32930100A3186D /* otherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = otherViewController.m; sourceTree = "<group>"; };
+		EEA180BE1B32930100A3186D /* OtherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OtherViewController.h; sourceTree = "<group>"; };
+		EEA180BF1B32930100A3186D /* OtherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OtherViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +87,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BC7115F31BAA5667007022D2 /* RightSlideView */ = {
+			isa = PBXGroup;
+			children = (
+				BC7115F41BAA56BF007022D2 /* RightSlideCustomView.h */,
+				BC7115F51BAA56BF007022D2 /* RightSlideCustomView.m */,
+			);
+			name = RightSlideView;
+			sourceTree = "<group>";
+		};
 		BC8563DB1BA6597100E55884 /* LeftOrRightView */ = {
 			isa = PBXGroup;
 			children = (
@@ -133,8 +145,9 @@
 				EEA180B11B32907700A3186D /* LeftSlideViewController */,
 				EEA1808F1B328F1500A3186D /* AppDelegate.h */,
 				EEA180901B328F1500A3186D /* AppDelegate.m */,
-				EEA180BE1B32930100A3186D /* otherViewController.h */,
-				EEA180BF1B32930100A3186D /* otherViewController.m */,
+				EEA180BE1B32930100A3186D /* OtherViewController.h */,
+				EEA180BF1B32930100A3186D /* OtherViewController.m */,
+				BC7115F31BAA5667007022D2 /* RightSlideView */,
 				BC8563E61BA6B19400E55884 /* AnotherView */,
 				BC8563DB1BA6597100E55884 /* LeftOrRightView */,
 				EEA180B81B3292A900A3186D /* MainPageViewController.h */,
@@ -289,8 +302,9 @@
 				EEA180911B328F1500A3186D /* AppDelegate.m in Sources */,
 				EEA180B71B32907700A3186D /* UIView_extra.m in Sources */,
 				BC8563EF1BA6B25800E55884 /* MessingView.m in Sources */,
+				BC7115F61BAA56BF007022D2 /* RightSlideCustomView.m in Sources */,
 				BC8563DE1BA659DD00E55884 /* UIButton_extra.m in Sources */,
-				EEA180C01B32930100A3186D /* otherViewController.m in Sources */,
+				EEA180C01B32930100A3186D /* OtherViewController.m in Sources */,
 				EEA1808E1B328F1500A3186D /* main.m in Sources */,
 				EEA180B61B32907700A3186D /* LeftSlideViewController.m in Sources */,
 				BC8563EC1BA6B24300E55884 /* OtherPlayView.m in Sources */,

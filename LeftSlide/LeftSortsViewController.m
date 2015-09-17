@@ -8,7 +8,7 @@
 
 #import "LeftSortsViewController.h"
 #import "AppDelegate.h"
-#import "otherViewController.h"
+#import "OtherViewController.h"
 #import "UIButton_extra.h"
 @interface LeftSortsViewController () <UITableViewDelegate,UITableViewDataSource>
 
@@ -133,7 +133,7 @@
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     AppDelegate *tempAppDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    otherViewController *vc = [[otherViewController alloc] init];
+    OtherViewController *vc = [[OtherViewController alloc] init];
     [tempAppDelegate.LeftSlideVC closeLeftView];//关闭左侧抽屉
     
     [tempAppDelegate.mainNavigationController pushViewController:vc animated:NO];
