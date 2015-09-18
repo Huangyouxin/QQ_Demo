@@ -102,6 +102,8 @@
 		BC7115F31BAA5667007022D2 /* RightSlideView */ = {
 			isa = PBXGroup;
 			children = (
+				EEA180BF1B32930100A3186D /* OtherViewController.m */,
+				EEA180BE1B32930100A3186D /* OtherViewController.h */,
 				BC7115F41BAA56BF007022D2 /* RightSlideCustomView.h */,
 				BC7115F51BAA56BF007022D2 /* RightSlideCustomView.m */,
 				BCCD42911BAAA321002461A0 /* Leftcellview.h */,
@@ -163,13 +165,11 @@
 			children = (
 				BC8563E41BA67C0B00E55884 /* setting@2x.png */,
 				EEA180B11B32907700A3186D /* LeftSlideViewController */,
-				EEA1808F1B328F1500A3186D /* AppDelegate.h */,
-				EEA180901B328F1500A3186D /* AppDelegate.m */,
-				EEA180BE1B32930100A3186D /* OtherViewController.h */,
-				EEA180BF1B32930100A3186D /* OtherViewController.m */,
 				BC7115F31BAA5667007022D2 /* RightSlideView */,
 				BC8563E61BA6B19400E55884 /* AnotherView */,
 				BC8563DB1BA6597100E55884 /* LeftOrRightView */,
+				EEA180901B328F1500A3186D /* AppDelegate.m */,
+				EEA1808F1B328F1500A3186D /* AppDelegate.h */,
 				EEA180B81B3292A900A3186D /* MainPageViewController.h */,
 				EEA180B91B3292A900A3186D /* MainPageViewController.m */,
 				EEA180981B328F1500A3186D /* Images.xcassets */,
