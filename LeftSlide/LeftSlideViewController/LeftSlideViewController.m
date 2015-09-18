@@ -6,7 +6,7 @@
 //  Copyright (c) 2015年 huangzhenyu. All rights reserved.
 
 #import "LeftSlideViewController.h"
-
+#import "AppDelegate.h"
 
 @interface LeftSlideViewController ()<UIGestureRecognizerDelegate>
 {
@@ -187,6 +187,7 @@
         }
         _scalef = 0;
     }
+    [self set_hidden];
 }
 
 
@@ -206,7 +207,7 @@
         self.viewCV.center = CGPointMake(kScreenWidth - kLeftCenterX +20, kScreenHeight * 0.5);
         self.viewCV.transform = CGAffineTransformScale(CGAffineTransformIdentity,kLeftScale,kLeftScale);
         self.contentView.alpha = kLeftAlpha;
-        
+        [self set_hidden];
         [UIView commitAnimations];
         _scalef = 0;
         [self removeSingleTap];
@@ -338,5 +339,21 @@
         return YES;
     }
 }
+
+
+- (void) set_hidden
+{
+    AppDelegate *tempAppDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    
+    if (tempAppDelegate.LeftSlideVC.closed)
+    {
+        [tempAppDelegate.mainVC setButtonHiddenNO];
+    }
+    else
+    {
+        [tempAppDelegate.mainVC setButtonHiddenYES];
+    }
+}
+
 
 @end

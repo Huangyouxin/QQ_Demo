@@ -20,5 +20,5 @@
 
 //+(CGFloat)getHeightByModel:(Model*)model;
 
-@property(nonatomic,strong)Model*model;
+@property(nonatomic,strong) Model * model;
 @end

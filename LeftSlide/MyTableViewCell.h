@@ -12,9 +12,10 @@
 @interface MyTableViewCell : UITableViewCell
 
 //此处label无论单元格展开与否都显示
-@property(nonatomic,strong) UILabel*TitleLabel;
+@property(nonatomic,strong) UILabel * TitleLabel;
 
-@property(nonatomic,strong)Model*model;
-@property(nonatomic,strong  )DetialView*detialView;
+@property(nonatomic,strong)Model * model;
+
+@property(nonatomic,strong  )DetialView * detialView;
 
 @end

@@ -20,6 +20,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    
     UIImageView *imageview = [[UIImageView alloc] initWithFrame:self.view.bounds];
     imageview.image = [UIImage imageNamed:@"leftbackiamge"];
     [self.view addSubview:imageview];

@@ -10,4 +10,10 @@
 
 @interface MainPageViewController : UIViewController <UITabBarControllerDelegate>
 
+@property (nonatomic, strong) UIButton * menuBtn;
+@property (nonatomic, strong) UIButton * rightBtn;
+
+- (void) setButtonHiddenYES;
+
+- (void) setButtonHiddenNO;
 @end

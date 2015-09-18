@@ -11,14 +11,18 @@
 #import "MyTableViewCell.h"
 #import "DetialView.h"
 
-@implementation Leftcellview
+@implementation Leftcellview{
+    NSMutableArray * aaaa;
+    BOOL fristDid;
+}
 
 
 - (id)initWithFrame:(CGRect)frame{
     
     self = [super initWithFrame:frame];
     if (self) {
-        // Initialization code
+        
+                // Initialization code
     }
     return self;
 }
@@ -27,7 +31,7 @@
 
 - (id)initWithContentView:(UIView *)contentview{
     
-    
+    fristDid = NO;
     self = [super initWithFrame:CGRectMake(0, 0, contentview.frame.size.width, contentview.frame.size.height)];
     
     [contentview addSubview:self];
@@ -46,10 +50,10 @@
             [arr addObject:model];
         }
         
-        [_array addObject:arr];
+        [_array addObject:arr];  //第三级菜单数组
     }
     
-    //表数据源数组
+    //表数据源数组 == 第一级菜单数组
     _CurrentArray = [[NSMutableArray alloc]initWithCapacity:0];
     
     for (int i = 0; i<_array.count; i++) {
@@ -57,16 +61,20 @@
     }
     
     //创建表
-    _bigTableView = [[UITableView alloc]initWithFrame:contentview.bounds style:UITableViewStyleGrouped];
+    _bigTableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, contentview.frame.size.width *2/3, contentview.frame.size.height) style:UITableViewStyleGrouped];
     _bigTableView.delegate = self;
     _bigTableView.dataSource = self;
     [self addSubview:_bigTableView];
+    
+    aaaa = [NSMutableArray arrayWithObjects:@"第一 ", @"第二 ", @"第三",nil];
+
     return self;
 }
 
 #pragma mark - tableView
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
+    //节行数
     return _CurrentArray.count;
 }
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -80,11 +88,14 @@
     }
     else
     {
-        if (cell.model) {
-            if (cell.model != [[_CurrentArray objectAtIndex:indexPath.section] objectAtIndex:indexPath.row]) {
+        if (cell.model)
+        {
+            if (cell.model != [[_CurrentArray objectAtIndex:indexPath.section] objectAtIndex:indexPath.row])
+            {
                 
                 cell.model = [[_CurrentArray objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
-                if (cell.model.isExpand==NO) {
+                if (cell.model.isExpand==NO)
+                {
                     cell.model=nil;
                 }
             }
@@ -111,11 +122,12 @@
 {
     return [[_CurrentArray objectAtIndex:section]count];
 }
+
 //点击单元格 展开、收缩 model信息
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     MyTableViewCell*cell=(MyTableViewCell*)[tableView cellForRowAtIndexPath:indexPath];
-    Model*model=[[_array objectAtIndex:indexPath.section]objectAtIndex:indexPath.row];
+    Model * model=[[_array objectAtIndex:indexPath.section]objectAtIndex:indexPath.row];
     model.isExpand = !model.isExpand;
     
     if (cell.model) {
@@ -151,35 +163,40 @@
 //自定义区头 把区头model 创建的view写这里
 - (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    UIView*view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 300, 44)];
-    view.backgroundColor = [UIColor yellowColor];
-    UIButton*btn = [UIButton buttonWithType:UIButtonTypeCustom];
-    btn.frame = CGRectMake(0, 0, 44,44);
-    btn.backgroundColor=[UIColor redColor];
+    UIView*view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth * 2/3 , 44)];
+    view.backgroundColor = [UIColor lightTextColor];
+    UILabel * Textlabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth - 100 - 54, 44)];
+    [view addSubview:Textlabel];
+    Textlabel.textAlignment = NSTextAlignmentCenter;
+    Textlabel.textColor = [UIColor blackColor];
+//    Textlabel.backgroundColor = [UIColor grayColor];
+    Textlabel.text = aaaa[section];
+    
+    UIButton*btn = [UIButton buttonWithType:UIButtonTypeSystem];
+    btn.frame = CGRectMake(kScreenWidth *2/3 - 50, 0, 44,44);
+//    [btn setImage:[UIImage imageNamed:@"arrow_down"] forState:UIControlStateNormal];
+//    [btn.imageView setImage:[UIImage imageNamed:@"arrow_right"]];
+    [btn setBackgroundImage:[UIImage imageNamed:@"arrow_right"] forState:UIControlStateNormal];
     btn.tag = section;
     [btn addTarget:self action:@selector(expand:) forControlEvents:UIControlEventTouchUpInside];
     [view addSubview:btn];
     return view;
-    
 }
 
 - (void)expand:(UIButton*)btn
 {
-    if([[_CurrentArray objectAtIndex:btn.tag] isEqualToArray:@[]])
-    {
+
+    if([[_CurrentArray objectAtIndex:btn.tag] isEqualToArray:@[]]){
+        
         [_CurrentArray replaceObjectAtIndex:btn.tag withObject:[_array objectAtIndex:btn.tag]];
         
-    }else
-    {
-        
+    }else{
         
         [_CurrentArray replaceObjectAtIndex:btn.tag withObject:@[]];
+        
     }
     [_bigTableView reloadData];
+    
 }
-
-
-
-
 
 @end

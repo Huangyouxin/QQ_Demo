@@ -23,10 +23,10 @@
     self.window.backgroundColor = [UIColor whiteColor];   //设置通用背景颜色
     [self.window makeKeyAndVisible];
     
-    MainPageViewController *mainVC = [[MainPageViewController alloc] init];
+    self.mainVC = [[MainPageViewController alloc] init];
     
 //   UINavigationController为最底层
-    self.mainNavigationController = [[UINavigationController alloc] initWithRootViewController:mainVC];
+    self.mainNavigationController = [[UINavigationController alloc] initWithRootViewController:self.mainVC];
     LeftSortsViewController *leftVC = [[LeftSortsViewController alloc] init];
     self.LeftSlideVC = [[LeftSlideViewController alloc] initWithLeftView:leftVC andMainView:self.mainNavigationController];
     self.window.rootViewController = self.LeftSlideVC;

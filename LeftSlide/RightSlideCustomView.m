@@ -6,10 +6,13 @@
 //  Copyright (c) 2015年 eamon. All rights reserved.
 //
 
+#define kScreenWidth  [[UIScreen mainScreen] bounds].size.width
+#define kScreenHeigh  [[UIScreen mainScreen] bounds].size.height
+
 #import "RightSlideCustomView.h"
 
-#define OPENCENTERX 220.0
-#define DIVIDWIDTH 70.0 //OPENCENTERX 对应确认是否打开或关闭的分界线。
+#define OPENCENTERX  kScreenWidth*2/3
+#define DIVIDWIDTH 10.0 //OPENCENTERX 对应确认是否打开或关闭的分界线。
 
 @implementation RightSlideCustomView
 
@@ -67,31 +70,39 @@
     
     if(recognizer.state == UIGestureRecognizerStateEnded)
     {
-        [UIView animateWithDuration:0.75
-                              delay:0.01
-                            options:UIViewAnimationOptionCurveEaseInOut
-                         animations:^(void)
-            {
+        [UIView beginAnimations:nil context:nil];
+
+//        [UIView animateWithDuration:0.75
+//                              delay:0.01
+//                            options:UIViewAnimationOptionCurveEaseInOut
+//                         animations:^(void)
+//            {
                 if (x > openPointCenter.x -  DIVIDWIDTH) {
                     self.center = openPointCenter;
                 }else{
                     self.center = CGPointMake(openPointCenter.x - OPENCENTERX,
                                            openPointCenter.y);
                 }
-            }completion:^(BOOL isFinish){
-         }];
+//            }completion:^(BOOL isFinish){
+//         }];
+        [UIView commitAnimations];
     }
     [recognizer setTranslation:CGPointZero inView:self.parentView];
 }
 
 -(void) handleTap:(UITapGestureRecognizer*) recognizer
 {
-    [UIView animateWithDuration:0.75
-                          delay:0.01
-                        options:UIViewAnimationOptionCurveEaseInOut animations:^(void){
+    //动画改变
+    [UIView beginAnimations:nil context:nil];
+
+//    [UIView animateWithDuration:0.75
+//                          delay:0.01
+//                        options:UIViewAnimationOptionCurveEaseOut animations:^(void){
                             self.center = CGPointMake(openPointCenter.x - OPENCENTERX,
                                                       openPointCenter.y);
-                        }completion:nil];
+//                        }completion:nil];
+    [UIView commitAnimations];
+
     
 }
 

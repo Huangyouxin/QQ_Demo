@@ -36,6 +36,7 @@
     //添加左侧
     UIButton *menuBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     menuBtn.frame = CGRectMake(0, 0, 20, 18);
+    self.menuBtn = menuBtn;
     [menuBtn setBackgroundImage:[UIImage imageNamed:@"menu"] forState:UIControlStateNormal];
     [menuBtn addTarget:self action:@selector(openOrCloseLeftList) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:menuBtn];
@@ -44,6 +45,7 @@
     UIButton *rightBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     rightBtn.frame = CGRectMake(270, 0, 20, 18);
     [rightBtn setBackgroundImage:[UIImage imageNamed:@"menu"] forState:UIControlStateNormal];
+    self.rightBtn = rightBtn;
     [rightBtn addTarget:self action:@selector(openOrCloseRightList) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:rightBtn];
     
@@ -58,10 +60,12 @@
     if (tempAppDelegate.LeftSlideVC.closed)
     {
         [tempAppDelegate.LeftSlideVC openLeftView];
+        [self setButtonHiddenYES];
     }
     else
     {
         [tempAppDelegate.LeftSlideVC closeLeftView];
+        [self setButtonHiddenNO];
     }
 }
 
@@ -72,11 +76,29 @@
     if (tempAppDelegate.LeftSlideVC.closed)
     {
         [tempAppDelegate.LeftSlideVC openRightView];
+        [self setButtonHiddenYES];
     }
     else
     {
         [tempAppDelegate.LeftSlideVC closeRightView];
+        [self setButtonHiddenNO];
     }
+}
+
+- (void) setButtonHiddenYES{
+    [UIView beginAnimations:nil context:nil];
+
+    _rightBtn.hidden = YES;
+    _menuBtn.hidden = YES;
+    [UIView commitAnimations];
+}
+
+- (void) setButtonHiddenNO{
+    [UIView beginAnimations:nil context:nil];
+
+    _rightBtn.hidden = NO;
+    _menuBtn.hidden = NO;
+    [UIView commitAnimations];
 }
 
 
@@ -94,6 +116,11 @@
     NSLog(@"viewWillAppear");
     AppDelegate *tempAppDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     [tempAppDelegate.LeftSlideVC setPanEnabled:YES];
+    if (tempAppDelegate.LeftSlideVC.closed) {
+        [self setButtonHiddenNO];
+    }else{
+        [self setButtonHiddenYES];
+    }
 }
 
 - (void) addtabbarlist{
