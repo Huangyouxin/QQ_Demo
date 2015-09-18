@@ -74,7 +74,9 @@
         self.leftTableview.transform = CGAffineTransformMakeScale(kLeftScale, kLeftScale);
         self.leftTableview.center = CGPointMake(kLeftCenterX, kScreenHeight * 0.5);
         
-        self.viewCV.frame = CGRectMake(kRRRRMainPageDistance, 0, kScreenWidth - kRRRRMainPageDistance , kScreenHeight);
+        self.viewCV.frame = CGRectMake(kScreenWidth- 100, 0, 100 , kScreenHeight);
+        NSLog(@"%0.f,%0.f,%0.f,%0.f",self.viewCV.center.x,self.viewCV.center.y,self.viewCV.size.width,self.viewCV.size.height);
+
         //设置右的初始位置和缩放系数
         self.viewCV.transform = CGAffineTransformMakeScale(kLeftScale, kLeftScale);
         self.viewCV.backgroundColor = [UIColor clearColor];
@@ -269,11 +271,11 @@
 {
     [UIView beginAnimations:nil context:nil];
     self.mainVC.view.transform = CGAffineTransformScale(CGAffineTransformIdentity,kMainPageScale,kMainPageScale);
-    self.mainVC.view.center = kRRRRMainPageCenter;
+    self.mainVC.view.center = CGPointMake((kScreenWidth - kMainPageDistance) * 0.5, kScreenHeight*0.5  );
     NSLog(@"%f",kRRRRMainPageCenter.x);
     self.closed = NO;
-
-    self.viewCV.center = CGPointMake( 288 , kScreenHeight * 0.5);
+//    kScreenWidth + kScreenWidth * kMainPageScale / 2.0 - kMainPageDistance
+    self.viewCV.center = CGPointMake( kScreenWidth- 40 , kScreenHeight * 0.5);
     
     self.viewCV.transform = CGAffineTransformScale(CGAffineTransformIdentity,1.0,1.0);
     self.contentView.alpha = 0;

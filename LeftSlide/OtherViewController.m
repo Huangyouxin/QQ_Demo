@@ -9,6 +9,7 @@
 #import "OtherViewController.h"
 #import "AppDelegate.h"
 #import "RightSlideCustomView.h"
+#import "Leftcellview.h"
 @interface OtherViewController ()
 
 @end
@@ -37,8 +38,10 @@
     //左侧页面
     UIImageView *imageleft = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"main_png"]];
     imageleft.frame = rect;
-    UIView * 
-    [self.view addSubview:imageleft];
+    UIView * left = [[UIView alloc]init];
+    Leftcellview * leftcell = [[Leftcellview alloc]initWithContentView:self.view];
+    [left addSubview:imageleft];
+    [self.view addSubview:leftcell];
     
     //内容页面
     UIView *contentView = [[UIView alloc] initWithFrame:rect];

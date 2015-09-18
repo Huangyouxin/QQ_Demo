@@ -13,6 +13,10 @@
 		BC8563E91BA6B21B00E55884 /* FriendlistView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8563E81BA6B21B00E55884 /* FriendlistView.m */; };
 		BC8563EC1BA6B24300E55884 /* OtherPlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8563EB1BA6B24300E55884 /* OtherPlayView.m */; };
 		BC8563EF1BA6B25800E55884 /* MessingView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8563EE1BA6B25800E55884 /* MessingView.m */; };
+		BCCD42931BAAA322002461A0 /* Leftcellview.m in Sources */ = {isa = PBXBuildFile; fileRef = BCCD42921BAAA322002461A0 /* Leftcellview.m */; };
+		BCCD42961BAAA6C2002461A0 /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = BCCD42951BAAA6C2002461A0 /* Model.m */; };
+		BCCD429B1BAAA828002461A0 /* DetialView.m in Sources */ = {isa = PBXBuildFile; fileRef = BCCD42981BAAA828002461A0 /* DetialView.m */; };
+		BCCD429C1BAAA828002461A0 /* MyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BCCD429A1BAAA828002461A0 /* MyTableViewCell.m */; };
 		EEA1808E1B328F1500A3186D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EEA1808D1B328F1500A3186D /* main.m */; };
 		EEA180911B328F1500A3186D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EEA180901B328F1500A3186D /* AppDelegate.m */; };
 		EEA180991B328F1600A3186D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEA180981B328F1500A3186D /* Images.xcassets */; };
@@ -47,6 +51,14 @@
 		BC8563EB1BA6B24300E55884 /* OtherPlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OtherPlayView.m; sourceTree = "<group>"; };
 		BC8563ED1BA6B25800E55884 /* MessingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessingView.h; sourceTree = "<group>"; };
 		BC8563EE1BA6B25800E55884 /* MessingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessingView.m; sourceTree = "<group>"; };
+		BCCD42911BAAA321002461A0 /* Leftcellview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Leftcellview.h; sourceTree = "<group>"; };
+		BCCD42921BAAA322002461A0 /* Leftcellview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Leftcellview.m; sourceTree = "<group>"; };
+		BCCD42941BAAA6C2002461A0 /* Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
+		BCCD42951BAAA6C2002461A0 /* Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Model.m; sourceTree = "<group>"; };
+		BCCD42971BAAA828002461A0 /* DetialView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetialView.h; sourceTree = "<group>"; };
+		BCCD42981BAAA828002461A0 /* DetialView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetialView.m; sourceTree = "<group>"; };
+		BCCD42991BAAA828002461A0 /* MyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTableViewCell.h; sourceTree = "<group>"; };
+		BCCD429A1BAAA828002461A0 /* MyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTableViewCell.m; sourceTree = "<group>"; };
 		EEA180881B328F1500A3186D /* LeftSlide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LeftSlide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEA1808C1B328F1500A3186D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EEA1808D1B328F1500A3186D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -92,6 +104,14 @@
 			children = (
 				BC7115F41BAA56BF007022D2 /* RightSlideCustomView.h */,
 				BC7115F51BAA56BF007022D2 /* RightSlideCustomView.m */,
+				BCCD42911BAAA321002461A0 /* Leftcellview.h */,
+				BCCD42921BAAA322002461A0 /* Leftcellview.m */,
+				BCCD42971BAAA828002461A0 /* DetialView.h */,
+				BCCD42981BAAA828002461A0 /* DetialView.m */,
+				BCCD42991BAAA828002461A0 /* MyTableViewCell.h */,
+				BCCD429A1BAAA828002461A0 /* MyTableViewCell.m */,
+				BCCD42941BAAA6C2002461A0 /* Model.h */,
+				BCCD42951BAAA6C2002461A0 /* Model.m */,
 			);
 			name = RightSlideView;
 			sourceTree = "<group>";
@@ -301,11 +321,15 @@
 				EEA180BD1B3292CB00A3186D /* LeftSortsViewController.m in Sources */,
 				EEA180911B328F1500A3186D /* AppDelegate.m in Sources */,
 				EEA180B71B32907700A3186D /* UIView_extra.m in Sources */,
+				BCCD429C1BAAA828002461A0 /* MyTableViewCell.m in Sources */,
 				BC8563EF1BA6B25800E55884 /* MessingView.m in Sources */,
 				BC7115F61BAA56BF007022D2 /* RightSlideCustomView.m in Sources */,
 				BC8563DE1BA659DD00E55884 /* UIButton_extra.m in Sources */,
+				BCCD42931BAAA322002461A0 /* Leftcellview.m in Sources */,
 				EEA180C01B32930100A3186D /* OtherViewController.m in Sources */,
 				EEA1808E1B328F1500A3186D /* main.m in Sources */,
+				BCCD429B1BAAA828002461A0 /* DetialView.m in Sources */,
+				BCCD42961BAAA6C2002461A0 /* Model.m in Sources */,
 				EEA180B61B32907700A3186D /* LeftSlideViewController.m in Sources */,
 				BC8563EC1BA6B24300E55884 /* OtherPlayView.m in Sources */,
 			);

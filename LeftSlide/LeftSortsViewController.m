@@ -43,7 +43,16 @@
         
         UIButton_extra * button = [UIButton_extra buttonWithType:UIButtonTypeCustom];
         
-        button.frame = CGRectMake(-5, -25 +i*76,100,  80);
+//        区别ipone6
+        int dex = kScreenHeight;
+        if (dex > 568) {
+            
+            button.frame = CGRectMake(-5, i*80,100,  80);
+
+        }else{
+            button.frame = CGRectMake(-5, -25 +i*76,100,  80);
+
+        }
         
         if (i == 1) {
             
