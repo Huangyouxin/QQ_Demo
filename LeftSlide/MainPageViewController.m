@@ -163,7 +163,7 @@
             self.title = @"好友列表";
             break;
         case 1002:
-            self.title = @"娱乐列表";
+            self.title = @"天气预报";
             break;
         case 1003:
             self.title = @"更多列表";

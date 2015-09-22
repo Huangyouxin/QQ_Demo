@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>693DD0D1-702D-47BE-8064-FC725F0084A9</string>
 	<key>IDESourceControlProjectName</key>
-	<string>LeftSlide</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>AA4F05DFF303F936D98402670D665F31DC20E3C3</key>
 		<string>https://github.com/Huangyouxin/QQ_Demo.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>LeftSlide.xcodeproj</string>
+	<string>LeftSlide.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>AA4F05DFF303F936D98402670D665F31DC20E3C3</key>
