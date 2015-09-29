@@ -530,13 +530,14 @@ static id AFJSONObjectByRemovingKeysWithNullValues(id JSONObject, NSJSONReadingO
 
 #if defined(__IPHONE_OS_VERSION_MIN_REQUIRED)
 #import <CoreGraphics/CoreGraphics.h>
-
+#import <UIKit/UIKit.h>
 @interface UIImage (AFNetworkingSafeImageLoading)
 + (UIImage *)af_safeImageWithData:(NSData *)data;
 @end
 
 static NSLock* imageLock = nil;
 
+#import <UIKit/UIKit.h>
 @implementation UIImage (AFNetworkingSafeImageLoading)
 
 + (UIImage *)af_safeImageWithData:(NSData *)data {
@@ -555,6 +556,7 @@ static NSLock* imageLock = nil;
 @end
 
 static UIImage * AFImageWithDataAtScale(NSData *data, CGFloat scale) {
+    
     UIImage *image = [UIImage af_safeImageWithData:data];
     if (image.images) {
         return image;
